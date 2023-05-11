@@ -1,0 +1,92 @@
+import React from 'react';
+import {View, StyleSheet, Linking, Text, TouchableOpacity} from 'react-native';
+import {RNCamera} from 'react-native-camera';
+// import {IconButton} from 'react-native-paper';
+import {
+  heightPercentageToDP as hP,
+  widthPercentageToDP as wP,
+} from 'react-native-responsive-screen';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
+import QRCodeScanner from 'react-native-qrcode-scanner';
+// import { RNCamera } from 'react-native-camera';
+
+export default class Camera extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  onSuccess = e => {
+    // Linking.openURL(e.data).catch(err =>;
+    //     console.error('An error occured', err)
+    // )
+    console.log(e.data);
+  };
+
+
+
+  render():
+      | React.ReactElement<any>
+      | string
+      | number
+      | {}
+      | React.ReactNodeArray
+      | React.ReactPortal
+      | boolean
+      | null
+      | undefined {
+
+    return (
+        <QRCodeScanner
+            onRead={this.onSuccess}
+            // flashMode={RNCamera.Constants.FlashMode.torch}
+            topContent={
+              <Text style={styles.centerText}>
+                Go to{' '}
+                <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
+                your computer and scan the QR code.
+              </Text>
+            }
+            bottomContent={
+              <TouchableOpacity style={styles.buttonTouchable}>
+                <Text style={styles.buttonText}>OK. Got it!</Text>
+              </TouchableOpacity>
+            }
+        />
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#000',
+    justifyContent: 'center',
+  },
+  buttonWrapper: {
+    flexDirection: 'row',
+    height: hP(10),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  captureButton: {
+    width: hP(8),
+    height: hP(8),
+    borderColor: '#fff',
+    borderWidth: 5,
+    borderRadius: hP(4),
+    backgroundColor: '#424242',
+  },
+  toggleFlashButton: {
+    position: 'absolute',
+    left: wP(6),
+  },
+});
+   <?php
+                                    if($_SESSION['admin']){
+                                        if($data['status']=='Perpanjang'){
+                                    ?>
+                                    <td><a href="#" class="btn btn-secondary>Cetak</a></td>
+                                    <?php }else{
+                                        echo"<td></td>";
+                                    }}?>
